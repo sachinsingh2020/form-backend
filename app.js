@@ -42,9 +42,13 @@ app.use(
 // Routes
 import user from "./routes/userRoutes.js";
 import siteVisit from "./routes/siteVisitsRoutes.js";
+import item from "./routes/itemRoutes.js"
+import supplier from "./routes/supplierRoutes.js"
 
 app.use("/api/v1", user);
 app.use("/api/v1", siteVisit);
+app.use("/api/v1", item)
+app.use("/api/v1", supplier);
 
 app.get("/", (req, res) => {
     res.send("<h1>Server Is Working</h1>");

@@ -3,7 +3,7 @@ import crypto from "crypto";
 import connection from "../config/database.js";
 import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import ErrorHandler from "../utils/errorHandler.js";
-import { sendToken } from "../utils/sendToken.js";
+import { sendLoginToken, sendToken } from "../utils/sendToken.js";
 
 
 // Register User
@@ -56,7 +56,7 @@ export const loginUser = catchAsyncError(async (req, res, next) => {
 
         if (!isMatch) return next(new ErrorHandler("Invalid login_id or password", 401));
 
-        sendToken(res, user, "Logged in successfully", 200);
+        sendLoginToken(res, user, "Logged in successfully", 200);
     });
 });
 

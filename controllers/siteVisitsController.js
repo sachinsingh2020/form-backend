@@ -62,7 +62,6 @@ export const createSiteVisit = catchAsyncError(async (req, res, next) => {
         client_mail,
         contact_number
     ];
-    // console.log("sachin");
 
 
     connection.query(query, values, (err, result) => {
